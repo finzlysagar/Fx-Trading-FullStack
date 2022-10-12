@@ -1,0 +1,54 @@
+<section class="vh-50 gradient-custom">
+    <div class="container py-5 h-50">
+      <div class="row d-flex justify-content-center align-items-center h-75">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="card bg-info text-white" style="border-radius: 1rem;">
+            <div class="card-body p-5 text-center">
+              <form class="mb-md-5 mt-md-4 pb-5" #data="ngForm" (ngSubmit)="onSubmit(data.value)">
+  
+                <h2 class="fw-bold" >BOOK</h2>
+                <hr style="background-color: white;">
+                  
+                <div class="form-outline form-white mb-4">
+                    <label class="form-label" >Name</label>
+                     <input type="text" #name ="ngModel" required pattern="[a-zA-Z. ]+$" name="customerName"  class="form-control" placeholder="enter the name" ngModel/>
+                  <p *ngIf="name.invalid && name.touched" style="color:red">*Enter valid Name </p>
+                </div>
+                
+  
+                <div class="form-outline form-white mb-4">
+                    <label style="margin-right: 20px;">currency pair</label>
+                  <select #pair="ngModel" required name="currencyPair" ngModel>
+                    <option class="active form-control">USDINR</option>
+                  </select>
+
+                  <div class="form-outline form-white mb-4">
+                    <label class="form-label" >Amount</label>
+                     <input #Amount="ngModel" reqiured  min="1" oninput="validity.valid||(value='');" name="tranferAmount" type="number" class="form-control" placeholder="enter the amount" ngModel />
+                     <p *ngIf="name.invalid && name.touched" style="color:red">please enter amount </p>
+                </div>
+                
+            
+                  
+                </div>
+                <div>
+                <div class="form-outline form-white mb-4">
+                    <input #getRate name="select" type="checkbox" id="getRate" (click)="rate(getRate,Amount)" />
+
+                    <label for="getRate">GetRate</label>
+                    <p>{{Message}}</p>
+                  
+                </div>
+              </div>
+
+  
+                <button class="btn btn-outline-light btn-lg" type="submit"  style="margin-right:20px;"[disabled]="data.invalid">Book</button>
+                <button class="btn btn-outline-light btn-lg " routerLink="/home">Home</button>
+            </form>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

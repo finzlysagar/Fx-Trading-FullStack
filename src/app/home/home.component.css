@@ -1,0 +1,29 @@
+.loginform{
+    text-align:center;   
+  }
+  
+  .bookform{
+    text-align:center; 
+  }
+  
+  .main-div {
+    background: #fff none repeat scroll 0 0;
+    margin: 10rem auto 30px;
+    max-width: 40%;
+    padding: 50px 70px 70px 71px;
+    border-radius: 15px;
+  }
+  
+
+.container1{
+
+    font-size: 20px;
+    padding: 10px 30px 10px 30px;
+    border-radius: 10px;
+    background-color: pink;
+}
+.panel{
+
+    font-size: 30px;
+
+}
